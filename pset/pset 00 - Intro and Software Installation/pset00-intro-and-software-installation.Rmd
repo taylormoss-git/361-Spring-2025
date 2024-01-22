@@ -106,7 +106,7 @@ g = ggplot(iris,
             aes(x = Petal.Width, 
                 y = Petal.Length)) + 
   geom_point() + 
-  ggtitle("Brian Macdonald's animation")
+  ggtitle("Guy De La Rosa's animation")
 g
 
 a = g + 
