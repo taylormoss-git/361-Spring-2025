@@ -21,30 +21,29 @@ library(knitr)
 
 ## Part 1: Course prep and software installation
 
+#### 1. Complete the Course Survey in the Quizzes section of Canvas
 
-#### 1. Complete the Course Survey in the Quizzes section of Canvas  
+After you submit the quiz, take a screenshot of the time stamp and Question 1. It should look something like this.
 
-After you submit the quiz, take a screenshot of the time stamp and Question 1. It should look something like this. 
+![](img/snip%20of%20Course%20Survey.png)
 
-![](img/snip of Course Survey.png)
+Edit the above file name and path to show your screenshot and ensure that it appears when you knit your document.
 
-Edit the above file name and path to show your screenshot and ensure that it appears when you knit your document. 
+#### 2. Download and install the latest version of R
 
-#### 2. Download and install the latest version of R 
+See <https://bmacgtpm.github.io/notes/software-installation.html> for some potentially useful tips.
 
-See https://bmacgtpm.github.io/notes/software-installation.html for some potentially useful tips. 
-
-The following code will show your version of R when you knit the document. It should say `R version 4.3.2` or later. Make sure it appears when you knit your document.  
+The following code will show your version of R when you knit the document. It should say `R version 4.3.2` or later. Make sure it appears when you knit your document.
 
 ```{r}
 R.Version()$version.string
 ```
 
-#### 3. Download and install the latest version of RStudio. 
+#### 3. Download and install the latest version of RStudio.
 
-See https://bmacgtpm.github.io/notes/software-installation.html for some potentially useful tips.
+See <https://bmacgtpm.github.io/notes/software-installation.html> for some potentially useful tips.
 
-This code will show your version of R when you knit the document. Make sure it appears when you knit your document.  It should say `2023.12.0+369` (or later).  
+This code will show your version of R when you knit the document. Make sure it appears when you knit your document. It should say `2023.12.0+369` (or later).
 
 ```{r}
 rstudioapi::versionInfo()$long_version
@@ -52,11 +51,11 @@ rstudioapi::versionInfo()$long_version
 
 #### 4. Install/update packages
 
-See https://bmacgtpm.github.io/notes/software-installation.html for the packages to install. 
+See <https://bmacgtpm.github.io/notes/software-installation.html> for the packages to install.
 
-Do not write R code for installing packages in this R Markdown. You don't want packages to install every time you knit this document. 
+Do not write R code for installing packages in this R Markdown. You don't want packages to install every time you knit this document.
 
-Check that you can load all of the libraries by running this chunk of code and showing that it executes without error. There may be some messages, and maybe warnings about versions. Those are ok. Make sure the output appears when you knit the document. 
+Check that you can load all of the libraries by running this chunk of code and showing that it executes without error. There may be some messages, and maybe warnings about versions. Those are ok. Make sure the output appears when you knit the document.
 
 ```{r error=T}
 library(knitr)
@@ -99,7 +98,7 @@ library(pubtheme)
 
 #### 5. Check `gganimate`
 
-See https://bmacgtpm.github.io/notes/software-installation.html. The code from that page is below, except a custom title has been added. Replace my name with yours, uncomment the animation code, run all of this code.
+See <https://bmacgtpm.github.io/notes/software-installation.html>. The code from that page is below, except a custom title has been added. Replace my name with yours, uncomment the animation code, run all of this code.
 
 ```{r}
 # We'll start with a static plot
@@ -123,32 +122,27 @@ a = g +
 
 ```
 
-There should be a static plot and an animated plot above. 
-If the `anim_save` worked properly there should be a new `test.gif`
-in the `img` folder that has your name. Take a screen shot of your animated gif when the points are near the upper right and show the screenshot here: 
+There should be a static plot and an animated plot above. If the `anim_save` worked properly there should be a new `test.gif` in the `img` folder that has your name. Take a screen shot of your animated gif when the points are near the upper right and show the screenshot here:
 
-![](img/snip of test animation.png)
+![](img/snip%20of%20test%20animation.png)
 
+If all of that works, `gganimate` is good to go! If that doesn't work, see the tips at <https://bmacgtpm.github.io/notes/software-installation.html>.
 
-If all of that works, `gganimate` is good to go!  If that doesn't work, see the tips at https://bmacgtpm.github.io/notes/software-installation.html.
-
-Once you have created the animation, comment out the code that creates the animation (as I have done above). This document won't knit to PDF with the animation code in it. You can only knit to HTML. 
+Once you have created the animation, comment out the code that creates the animation (as I have done above). This document won't knit to PDF with the animation code in it. You can only knit to HTML.
 
 #### 6. Bookmarks
 
-See https://bmacgtpm.github.io/notes/software-installation.html. 
-
+See <https://bmacgtpm.github.io/notes/software-installation.html>.
 
 ## Part 2: Github
 
-#### 7. Create a GitHub account at <https://github.com/> if you don't have one. Submit your GitHub username in Quizzes -> Course Survey on Canvas.
+#### 7. Create a GitHub account at <https://github.com/> if you don't have one. Submit your GitHub username in Quizzes -\> Course Survey on Canvas.
 
-#### 8. Download GitHub Desktop at <https://desktop.github.com/>. 
+#### 8. Download GitHub Desktop at <https://desktop.github.com/>.
 
-Take a screenshot showing Github Desktop (or different software, or the command line) and show it here. 
+Take a screenshot showing Github Desktop (or different software, or the command line) and show it here.
 
-
-![](img/snip of GitHub Desktop.png)
+![](img/snip%20of%20GitHub%20Desktop.png)
 
 If you have experience with Git/Github, and prefer to use different software or the command line, that's fine, but we may not be able to help if you have a problem.
 
@@ -156,15 +150,12 @@ If you have experience with Git/Github, and prefer to use different software or 
 
 Clone the repo, create a new branch and name the branch `Firstname Lastname` your first and last name. Make an edit to the R Markdown file `pset00-GitHub-pull-request-Firstname-Lastname.Rmd` to have your name at the top instead of mine. Commit that to your branch, push those commits to GitHub, and create a pull-request to the `main` branch on the 361-Spring-2024 repo. Make the title of the pull request your first and last name. For help getting started, see <https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/overview/getting-started-with-github-desktop>.
 
-If you find yourself getting many notification, you can go to https://github.com/watching to choose what notifications you get. [This page](https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/managing-subscriptions-for-activity-on-github/managing-your-subscriptions) has some more info on notifications/subscriptions. 
+If you find yourself getting many notification, you can go to <https://github.com/watching> to choose what notifications you get. [This page](https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/managing-subscriptions-for-activity-on-github/managing-your-subscriptions) has some more info on notifications/subscriptions.
 
 #### 10. Set up Github Copilot in RStudio
 
-See https://bmacgtpm.github.io/notes/github-copilot-in-rstudio.html.  
+See <https://bmacgtpm.github.io/notes/github-copilot-in-rstudio.html>.
 
-![](img/snip of GitHub Copilot.png)
+![](img/snip%20of%20GitHub%20Copilot.png)
 
 If you use Github Copilot elsewhere, take a screenshot of whatever software you use.
-
-
-
