@@ -138,10 +138,14 @@ Once you have created the animation, comment out the code that creates the anima
 
 See https://bmacgtpm.github.io/notes/software-installation.html. 
 
+Bookmarked.
 
 ## Part 2: Github
 
 #### 7. Create a GitHub account at <https://github.com/> if you don't have one. Submit your GitHub username in Quizzes -> Course Survey on Canvas.
+
+
+Created.
 
 #### 8. Download GitHub Desktop at <https://desktop.github.com/>. 
 
