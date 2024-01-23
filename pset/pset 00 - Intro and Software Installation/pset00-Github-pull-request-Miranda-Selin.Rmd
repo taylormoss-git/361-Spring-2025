@@ -1,7 +1,7 @@
 ---
 title: "HW 0, Question 9"
-author: "Brian Macdonald"
-date: 'Jan 15, 2024'
+author: "Miranda Selin"
+date: 'Jan 22, 2024'
 output: html_document
 ---
 
