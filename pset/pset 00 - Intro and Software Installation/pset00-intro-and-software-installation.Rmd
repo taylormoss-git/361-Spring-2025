@@ -131,7 +131,7 @@ There should be a static plot and an animated plot above.
 If the `anim_save` worked properly there should be a new `test.gif`
 in the `img` folder that has your name. Take a screen shot of your animated gif when the points are near the upper right and show the screenshot here: 
 
-![](img/Test_animation.png)
+![](img/Animation_test.png)
 
 
 If all of that works, `gganimate` is good to go!  If that doesn't work, see the tips at https://bmacgtpm.github.io/notes/software-installation.html.
@@ -153,7 +153,7 @@ I have bookmarked the appropriate websites!!!
 Take a screenshot showing Github Desktop (or different software, or the command line) and show it here. 
 
 
-![](img/snip of GitHub Desktop.png)
+![](img/Github_desktop.png)
 
 If you have experience with Git/Github, and prefer to use different software or the command line, that's fine, but we may not be able to help if you have a problem.
 
