@@ -26,7 +26,7 @@ library(knitr)
 
 After you submit the quiz, take a screenshot of the time stamp and Question 1. It should look something like this. 
 
-![](img/snip of Course Survey.png)
+![](img/SurveyScreenshot-VishakSrikanth.png)
 
 Edit the above file name and path to show your screenshot and ensure that it appears when you knit your document. 
 
@@ -107,7 +107,7 @@ g = ggplot(iris,
             aes(x = Petal.Width, 
                 y = Petal.Length)) + 
   geom_point() + 
-  ggtitle("Brian Macdonald's animation")
+  ggtitle("Vishak Srikanth's animation")
 g
 
 a = g + 
@@ -115,11 +115,11 @@ a = g +
                     transition_length = 2,
                     state_length = 1)
 
-#a  ## check that the animation works
-
-## save the animation
-# anim_save(a, 
-#           filename = 'img/test animation.gif')
+# a  ## check that the animation works
+# 
+# # save the animation
+#  anim_save(a,
+#            filename = 'img/test animation.gif')
 
 ```
 
@@ -127,7 +127,10 @@ There should be a static plot and an animated plot above.
 If the `anim_save` worked properly there should be a new `test.gif`
 in the `img` folder that has your name. Take a screen shot of your animated gif when the points are near the upper right and show the screenshot here: 
 
-![](img/snip of test animation.png)
+Screenshot of animated gif
+
+
+![](img/snip of test animation-vishak.png)
 
 
 If all of that works, `gganimate` is good to go!  If that doesn't work, see the tips at https://bmacgtpm.github.io/notes/software-installation.html.
@@ -138,6 +141,9 @@ Once you have created the animation, comment out the code that creates the anima
 
 See https://bmacgtpm.github.io/notes/software-installation.html. 
 
+Screenshot of Bookmarks
+
+![](img/bookmarks-VishakSrikanth.png)
 
 ## Part 2: Github
 
@@ -147,8 +153,9 @@ See https://bmacgtpm.github.io/notes/software-installation.html.
 
 Take a screenshot showing Github Desktop (or different software, or the command line) and show it here. 
 
+Screenshot of GitHub Desktop
 
-![](img/snip of GitHub Desktop.png)
+![](img/snip of Github Desktop-VishakSrikanth.png)
 
 If you have experience with Git/Github, and prefer to use different software or the command line, that's fine, but we may not be able to help if you have a problem.
 
@@ -160,11 +167,23 @@ For help getting started, see <https://docs.github.com/en/desktop/installing-and
 
 If you find yourself getting too many GitHub notifications, you can go to https://github.com/watching to choose what notifications you get. [This page](https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/managing-subscriptions-for-activity-on-github/managing-your-subscriptions) has some more info on notifications/subscriptions. 
 
+Screenshot of Pull request created
+
+
+![](img/PR-VishakSrikanth.png)
+
 #### 10. Set up Github Copilot in RStudio
 
 See https://bmacgtpm.github.io/notes/github-copilot-in-rstudio.html.  
 
-![](img/snip of GitHub Copilot.png)
+
+GitHub Copilot Status
+
+University affiliation verification has been competed and access to Student Developer Pack and GitHub coPilot is pending for my GitHub ID (mathaiml5).
+See screenshot of Github Copilot below. The status is still in Approved (Green) state and not yet toggled to Purple (provisioned and activated state).
+
+
+![](img/VishakGithubCoPilot.jpg)
 
 If you use Github Copilot elsewhere, take a screenshot of whatever software you use.
 
