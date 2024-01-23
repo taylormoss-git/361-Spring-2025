@@ -26,7 +26,7 @@ library(knitr)
 
 After you submit the quiz, take a screenshot of the time stamp and Question 1. It should look something like this. 
 
-![](img/snip of Course Survey.png)
+![](img/hawleysurvey.png)
 
 Edit the above file name and path to show your screenshot and ensure that it appears when you knit your document. 
 
@@ -107,7 +107,7 @@ g = ggplot(iris,
             aes(x = Petal.Width, 
                 y = Petal.Length)) + 
   geom_point() + 
-  ggtitle("Brian Macdonald's animation")
+  ggtitle("Alex Hawley's animation")
 g
 
 a = g + 
@@ -115,11 +115,10 @@ a = g +
                     transition_length = 2,
                     state_length = 1)
 
-#a  ## check that the animation works
+# a  ## check that the animation works
 
 ## save the animation
-# anim_save(a, 
-#           filename = 'img/test animation.gif')
+# anim_save(a, filename = 'img/test animation.gif')
 
 ```
 
@@ -127,7 +126,7 @@ There should be a static plot and an animated plot above.
 If the `anim_save` worked properly there should be a new `test.gif`
 in the `img` folder that has your name. Take a screen shot of your animated gif when the points are near the upper right and show the screenshot here: 
 
-![](img/snip of test animation.png)
+![](img/hawleydots.png)
 
 
 If all of that works, `gganimate` is good to go!  If that doesn't work, see the tips at https://bmacgtpm.github.io/notes/software-installation.html.
@@ -138,17 +137,21 @@ Once you have created the animation, comment out the code that creates the anima
 
 See https://bmacgtpm.github.io/notes/software-installation.html. 
 
+Bookmarked.
+
 
 ## Part 2: Github
 
 #### 7. Create a GitHub account at <https://github.com/> if you don't have one. Submit your GitHub username in Quizzes -> Course Survey on Canvas.
+
+Quiz submitted.
 
 #### 8. Download GitHub Desktop at <https://desktop.github.com/>. 
 
 Take a screenshot showing Github Desktop (or different software, or the command line) and show it here. 
 
 
-![](img/snip of GitHub Desktop.png)
+![](img/hawleygithub.png)
 
 If you have experience with Git/Github, and prefer to use different software or the command line, that's fine, but we may not be able to help if you have a problem.
 
@@ -158,13 +161,17 @@ Clone the repo, create a new branch and name the branch `Firstname Lastname` you
 
 If you find yourself getting many notification, you can go to https://github.com/watching to choose what notifications you get. [This page](https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/managing-subscriptions-for-activity-on-github/managing-your-subscriptions) has some more info on notifications/subscriptions. 
 
+Done!
+
 #### 10. Set up Github Copilot in RStudio
 
 See https://bmacgtpm.github.io/notes/github-copilot-in-rstudio.html.  
 
-![](img/snip of GitHub Copilot.png)
+![](img/hawleycopilot.png)
 
 If you use Github Copilot elsewhere, take a screenshot of whatever software you use.
+
+
 
 
 

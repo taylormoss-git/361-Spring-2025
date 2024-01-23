@@ -1,0 +1,33 @@
+---
+title: 'S&DS 361 Homework 0: Software Prep'
+date: "Due Tue Jan 23, 2024"
+output:
+  pdf_document: default
+  word_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo    = T, 
+                      include = T,
+                      warning = F,
+                      message = F,
+                      comment = NA,
+                      fig.height = 5, 
+                      fig.width  = 5, 
+                      fig.align  = 'center')
+library(knitr)
+```
+
+## Part 1: Course prep and software installation
+
+
+#### 1. Complete the Course Survey in the Quizzes section of Canvas  
+
+After you submit the quiz, take a screenshot of the time stamp and Question 1. It should look something like this. 
+
+
+
+
+
+
