@@ -16,6 +16,7 @@ knitr::opts_chunk$set(echo    = T,
                       fig.height = 5, 
                       fig.width  = 5, 
                       fig.align  = 'center')
+# options(tinytex.verbose = TRUE)
 library(knitr)
 ```
 
