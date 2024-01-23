@@ -115,10 +115,10 @@ a = g +
                     transition_length = 2,
                     state_length = 1)
 
-#a  ## check that the animation works
+# a  ## check that the animation works
 
 ## save the animation
-# anim_save(a, 
+# anim_save(a,
 #           filename = 'img/test animation.gif')
 
 ```
@@ -127,7 +127,7 @@ There should be a static plot and an animated plot above.
 If the `anim_save` worked properly there should be a new `test.gif`
 in the `img` folder that has your name. Take a screen shot of your animated gif when the points are near the upper right and show the screenshot here: 
 
-![](img/snip of test animation.png)
+![](img/Screenshot 2024-01-23 100647.png)
 
 
 If all of that works, `gganimate` is good to go!  If that doesn't work, see the tips at https://bmacgtpm.github.io/notes/software-installation.html.
