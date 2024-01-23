@@ -171,7 +171,7 @@ If you find yourself getting many notification, you can go to https://github.com
 
 See https://bmacgtpm.github.io/notes/github-copilot-in-rstudio.html.  
 
-![](img/snip of GitHub Copilot.png)
+![](/Users/padennichols/Documents/Yale/SDS361/snip of GitHub Copilot.jpeg)
 
 If you use Github Copilot elsewhere, take a screenshot of whatever software you use.
 
