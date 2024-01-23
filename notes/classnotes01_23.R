@@ -27,10 +27,38 @@ dg
 # dg <- df %>% pivot_longer(cols = c(ev, hev, other))
 # these are equivalent, where the first arg of pivot_longer is df, but pipe operator strings together
 
-ggplot(dg,
-       aes(x = value, y = year, fill = name)) +
-  geom_col(position = "stack") +
-  scale_fill_manual(values = c("ev" = "#00BFFF", "hev" = "#FFA500", "other" = "#808080")) +
-  labs(title = "Global EV Market Share",
-       subtitle = "Source: CNBC")
+# following imported from pubtheme > Bar Plot section
+
+title = "EV, HEV, and Other Vehicle Market Share" 
+g = ggplot(dg %>% filter(name != 'other'), ## equiv. to dg[dg$name != 'other']
+           aes(x = value, 
+               y = year, 
+               label = round(value,2),
+               fill = name)) +
+  geom_col(width = 0.8) + 
+  # geom_text(hjust = -0.1) + ## optional numbers with reasonable number of digits
+  labs(title    = title,
+       x        = 'Market Share',
+       y        = 'Year') +
+  scale_fill_manual(values = c('ev' = '#619CFF', 'hev' = '#F8766D', 'other' = 'grey'))
+
+g
+
+# or
+g %>%
+  pub(type = 'bar')
+g
+
+------------------
+## Save to a file using base_size = 36
+gg = g %>%
+  pub(type      = 'bar',
+      base_size = 36)
+
+ggsave(filename = paste0("img/", gsub("%", " Perc", title), ".jpg"), ## must have a subfolder called 'img'
+       plot   = gg,
+       width  = 20,   ## do not change
+       height = 15,   ## can change from 20 if desired. We use 15 here b/c there are only 3 bars
+       units  = 'in', ## do not change
+       dpi    = 72)   ## do not change
 
