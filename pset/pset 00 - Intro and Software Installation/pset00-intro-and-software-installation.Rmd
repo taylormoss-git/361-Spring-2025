@@ -25,8 +25,7 @@ library(knitr)
 #### 1. Complete the Course Survey in the Quizzes section of Canvas  
 
 After you submit the quiz, take a screenshot of the time stamp and Question 1. It should look something like this. 
-
-![](img/snip of Course Survey.png)
+![](img/jade_course_survey.png)
 
 Edit the above file name and path to show your screenshot and ensure that it appears when you knit your document. 
 
@@ -47,8 +46,12 @@ See https://bmacgtpm.github.io/notes/software-installation.html for some potenti
 This code will show your version of R when you knit the document. Make sure it appears when you knit your document.  It should say `2023.12.0+369` (or later).  
 
 ```{r}
-rstudioapi::versionInfo()$long_version
+rstudioapi::versionInfo()$long_version 
 ```
+*** I KNOW THIS RETURNS NULL! It is because I use VS Code as my IDE, and therefore the rstudioapi package does not work here. I ran this in RStudio and it returned the correct version (pic attatched.)
+
+![](img/jade_rstudioapi.png)
+
 
 #### 4. Install/update packages
 
@@ -81,7 +84,7 @@ library(RSelenium)
 library(rvest)
 library(randomForest)
 library(FNN)
-library(caret)
+library(caret) 
 library(pls)
 library(devtools)
 library(splines)
@@ -110,16 +113,16 @@ g = ggplot(iris,
   ggtitle("Brian Macdonald's animation")
 g
 
-a = g + 
-  transition_states(Species,
-                    transition_length = 2,
-                    state_length = 1)
+# a = g + 
+#   transition_states(Species,
+#                     transition_length = 2,
+#                     state_length = 1)
 
-#a  ## check that the animation works
+# a  ## check that the animation works
 
 ## save the animation
-# anim_save(a, 
-#           filename = 'img/test animation.gif')
+ #anim_save(a, 
+       #   filename = '/Users/jadevillegas/Desktop/GitHub/361-Spring-2024/pset/pset 00 - Intro and Software Installation/img/test.gif')
 
 ```
 
@@ -127,7 +130,7 @@ There should be a static plot and an animated plot above.
 If the `anim_save` worked properly there should be a new `test.gif`
 in the `img` folder that has your name. Take a screen shot of your animated gif when the points are near the upper right and show the screenshot here: 
 
-![](img/snip of test animation.png)
+![](img/jade_gif_test.png)
 
 
 If all of that works, `gganimate` is good to go!  If that doesn't work, see the tips at https://bmacgtpm.github.io/notes/software-installation.html.
@@ -148,7 +151,7 @@ See https://bmacgtpm.github.io/notes/software-installation.html.
 Take a screenshot showing Github Desktop (or different software, or the command line) and show it here. 
 
 
-![](img/snip of GitHub Desktop.png)
+![](img/jade_github_dash.png)
 
 If you have experience with Git/Github, and prefer to use different software or the command line, that's fine, but we may not be able to help if you have a problem.
 
@@ -162,9 +165,11 @@ If you find yourself getting many notification, you can go to https://github.com
 
 See https://bmacgtpm.github.io/notes/github-copilot-in-rstudio.html.  
 
-![](img/snip of GitHub Copilot.png)
+![](img/jade_github_copilot.png)
 
 If you use Github Copilot elsewhere, take a screenshot of whatever software you use.
+
+
 
 
 
