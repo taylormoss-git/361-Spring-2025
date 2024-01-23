@@ -4,7 +4,7 @@ Notes, psets, and other resources for S&DS 361/661.
 
 workflow reminders:
 ```
-git fetch upstream
+git fetch upstream main
 git checkout main
 git merge upstream/main
 git push origin
