@@ -124,7 +124,7 @@ a
 
 There should be a static plot and an animated plot above. If the `anim_save` worked properly there should be a new `test.gif` in the `img` folder that has your name. Take a screen shot of your animated gif when the points are near the upper right and show the screenshot here:
 
-![](img/snip%20of%20test%20animation.png)
+![](img/snip of test animation.png)
 
 If all of that works, `gganimate` is good to go! If that doesn't work, see the tips at <https://bmacgtpm.github.io/notes/software-installation.html>.
 
@@ -156,6 +156,6 @@ If you find yourself getting many notification, you can go to <https://github.co
 
 See <https://bmacgtpm.github.io/notes/github-copilot-in-rstudio.html>.
 
-![](img/snip%20of%20GitHub%20Copilot.png)
+![](img/snip of Github copilot.png)
 
 If you use Github Copilot elsewhere, take a screenshot of whatever software you use.
