@@ -23,7 +23,6 @@ knitr::opts_chunk$set(echo = TRUE)
     - ULA: TBD
     - ULA: TBD
     - ULA: TBD
-    - ULS: TBD
     - Course Manager: TBD
 - Midterms: TBD
 - Final exam: TBD
@@ -84,9 +83,11 @@ There will be (roughly) weekly problem sets that focus on both theory and applic
 - Midterms: 22.5% each
 - Final: 35%
 
+**Submitting assignments.** You will submit assignments on Gradescope. The pull request assignment from the first problem set is the only thing you will submit on GitHub.  On Gradescope there is a place to submit your PDF only, and a place to submit other files (usually just an .Rmd file, but sometimes we'll have other files). 
+
 **Late Policy on Problem Sets.** You can submit 2 Problem Sets up to 48 hours late, no questions asked. Other than that, you need a dean's extension to submit late without penalty. Without a dean's extension, there is a 10% penalty per day. 
 
-If you are unable to submit the assignment on Gradescope (because e.g. the deadline has passed), please ask the TF to open the submission back up for you. You can email the assignment to the TF as evidence of when you completed the assignment, but you will eventually still need to upload it to Gradescope. You assignment will not be graded until it is uploaded to Gradescope.
+If you are unable to submit the assignment on Gradescope (because e.g. the deadline has passed), please ask the course manager to open the submission back up for you. You can email the assignment to the course manager as evidence of when you completed the assignment, but you will eventually still need to upload it to Gradescope. You assignment will not be graded until it is uploaded to Gradescope.
 
 **Dropping Lowest Grades.** I will drop the lowest grade from among problems sets that you made a *reasonable attempt* at completing. A reasonable attempt is one where you tried every problem, completed part of every problem, but got stuck somewhere on a couple of the problems and did them incorrectly. If you do not make a reasonable attempt, the grade will not be dropped. Examples:
 
@@ -126,9 +127,11 @@ ggplot(df, aes(x=x, y=y))+
 
 Class time will be a mix of live-coding in R, in-class small group activities, interactive lecturing and work on the board, and possibly other types of activities from time to time. You are not necessarily expected to ask/answer questions in front of the whole class (though you are encouraged to do so, the more interaction the merrier!), but you are expected to participate in small group discussions/activities and smaller discussions with me during class. 
 
-**Recordings.** Some classes might be recorded, or at least partly recorded. Students who have valid excused absences can request access to the recording of the class they missed. In-class activities involving individual or small group work or small group discussions will not be possible to record. 
+**Recordings.** Some classes might be recorded, or at least partly recorded. Students who have valid excused absences can request access to the recording of the class they missed. In-class activities involving individual or small group work or small group discussions will not be possible to record. Please contact our course manager to request access to course recordings with an excused absence.
 
 **Office hours.** You are expected to attempt problems before seeking help in office hours. When you ask for help, clearly state what you have attempted, where you got stuck, and what specific question you have. 
+
+**Ed Discussion and GitHub Issues.** You will be able to ask questions on Ed Discussion and GitHub issues.  The same guidelines as office hours apply here: You are expected to attempt problems before seeking help, and when you ask for help, clearly state what you have attempted, where you got stuck, and what specific question you have. Use minimial reproducible examples when possible. 
 
 
 ## Academic Integrity
