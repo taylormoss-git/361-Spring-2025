@@ -40,6 +40,12 @@ The following code will show your version of R when you knit the document. It sh
 R.Version()$version.string
 ```
 
+
+
+
+
+
+
 #### 3. Download and install the latest version of RStudio. 
 
 See https://bmacgtpm.github.io/notes/software-installation.html for some potentially useful tips.
@@ -57,6 +63,9 @@ See https://bmacgtpm.github.io/notes/software-installation.html for the packages
 Do not write R code for installing packages in this R Markdown. You don't want packages to install every time you knit this document. 
 
 Check that you can load all of the libraries by running this chunk of code and showing that it executes without error. There may be some messages, and maybe warnings about versions. Those are ok. Make sure the output appears when you knit the document. 
+
+
+
 
 ```{r error=T}
 library(knitr)
@@ -99,6 +108,8 @@ library(pubtheme)
 
 #### 5. Check `gganimate`
 
+
+
 See https://bmacgtpm.github.io/notes/software-installation.html. The code from that page is below, except a custom title has been added. Replace my name with yours, uncomment the animation code, run all of this code.
 
 ```{r}
@@ -114,13 +125,15 @@ a = g +
   transition_states(Species,
                     transition_length = 2,
                     state_length = 1)
-
 #a  ## check that the animation works
 
 ## save the animation
  #anim_save(a, 
            #filename = 'img/test animation.gif')
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 ```
 
 There should be a static plot and an animated plot above. 
