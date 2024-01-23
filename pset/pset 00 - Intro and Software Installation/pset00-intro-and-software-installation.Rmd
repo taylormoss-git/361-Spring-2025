@@ -1,5 +1,6 @@
 ---
 title: 'S&DS 361 Homework 0: Software Prep'
+author: 'Felix Bridgeman'
 date: "Due Tue Jan 23, 2024"
 output:
   pdf_document: default
@@ -26,7 +27,7 @@ library(knitr)
 
 After you submit the quiz, take a screenshot of the time stamp and Question 1. It should look something like this. 
 
-![](img/snip of Course Survey.png)
+![](img/felixsurvey.png)
 
 Edit the above file name and path to show your screenshot and ensure that it appears when you knit your document. 
 
@@ -107,7 +108,7 @@ g = ggplot(iris,
             aes(x = Petal.Width, 
                 y = Petal.Length)) + 
   geom_point() + 
-  ggtitle("Brian Macdonald's animation")
+  ggtitle("Felix Bridgeman's animation")
 g
 
 a = g + 
@@ -117,7 +118,7 @@ a = g +
 
 #a  ## check that the animation works
 
-## save the animation
+# save the animation
 # anim_save(a, 
 #           filename = 'img/test animation.gif')
 
@@ -127,7 +128,7 @@ There should be a static plot and an animated plot above.
 If the `anim_save` worked properly there should be a new `test.gif`
 in the `img` folder that has your name. Take a screen shot of your animated gif when the points are near the upper right and show the screenshot here: 
 
-![](img/snip of test animation.png)
+![](img/felixanimation.png)
 
 
 If all of that works, `gganimate` is good to go!  If that doesn't work, see the tips at https://bmacgtpm.github.io/notes/software-installation.html.
@@ -148,7 +149,7 @@ See https://bmacgtpm.github.io/notes/software-installation.html.
 Take a screenshot showing Github Desktop (or different software, or the command line) and show it here. 
 
 
-![](img/snip of GitHub Desktop.png)
+![](img/felixgithubdesktop.png)
 
 If you have experience with Git/Github, and prefer to use different software or the command line, that's fine, but we may not be able to help if you have a problem.
 
@@ -162,7 +163,7 @@ If you find yourself getting many notification, you can go to https://github.com
 
 See https://bmacgtpm.github.io/notes/github-copilot-in-rstudio.html.  
 
-![](img/snip of GitHub Copilot.png)
+![](img/ggplotfelix.png)
 
 If you use Github Copilot elsewhere, take a screenshot of whatever software you use.
 
