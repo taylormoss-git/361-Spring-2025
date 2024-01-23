@@ -20,9 +20,6 @@ knitr::opts_chunk$set(echo    = T,
 library(knitr)
 ```
 
-
-Presumably you have already cloned the repo <https://github.com/bmacGTPM/361-Spring-2023> in order to get this file, but if you haven't, do that now. Create a new branch and name it your first and last name. Make an edit to this R Markdown file `hw2-q2-Github-pull-request-Firstname-Lastname.Rmd` to have your name at the top instead of mine, and the current date instead of Jan 15, 2023. Also change the filename to include your first and last name. Commit that to your branch, push those commits to Github, and create a pull-request to the `main` branch. For help getting started, see <https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/overview/getting-started-with-github-desktop>.
-
 ## Part 1: Course prep and software installation
 
 
@@ -164,9 +161,11 @@ Clone the repo, create a new branch and name the branch `Firstname Lastname` you
 
 See https://bmacgtpm.github.io/notes/github-copilot-in-rstudio.html.  
 
-![](img/snip of GitHub Copilot.png)
+![](img/Screenshot 2024-01-22 at 8.23.44 PM.png)
 
 If you use Github Copilot elsewhere, take a screenshot of whatever software you use.
+
+
 
 
 
