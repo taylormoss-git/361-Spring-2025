@@ -94,7 +94,6 @@ library(maps) ## leave uncommented. For some reason GitHub Actions had a problem
 ## load tidyverse last!
 library(tidyverse)
 library(pubtheme)
-
 ```
 
 #### 5. Check `gganimate`
