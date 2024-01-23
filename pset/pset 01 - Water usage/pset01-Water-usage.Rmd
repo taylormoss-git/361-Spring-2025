@@ -52,10 +52,10 @@ years = 2008:2020
 d = NULL
 
 for(s in sources){
-  cat(s, '') ## show progress
+  cat(s, '') ## set up columns (gwd, sw, and gwa)
   
   for(year in years){
-    cat(year, '') ## show progress
+    cat(year, '') ## set up row headers for each year
   
     ## 
     filename = paste0('rawdata/', s, '_', year, '.csv')
@@ -67,6 +67,7 @@ for(s in sources){
     ## Use `pivot_longer`, `separate`, and/or other functions to transform this
     ## data frame into a data frame with 5 columns: 
     ## GEOID, crop, source, year, and value (indicating km^3 of water)
+    
     
     
     
