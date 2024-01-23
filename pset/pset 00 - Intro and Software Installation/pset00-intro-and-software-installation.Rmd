@@ -38,6 +38,7 @@ The following code will show your version of R when you knit the document. It sh
 
 ```{r}
 R.Version()$version.string
+
 ```
 
 #### 3. Download and install the latest version of RStudio. 
