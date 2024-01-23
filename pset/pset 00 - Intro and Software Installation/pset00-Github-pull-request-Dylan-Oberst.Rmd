@@ -1,8 +1,10 @@
 ---
 title: "HW 0, Question 9"
-author: "Brian Macdonald"
-date: 'Jan 15, 2024'
-output: html_document
+author: "Dylan Oberst"
+date: "Jan 22, 2024"
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
