@@ -50,3 +50,6 @@ rsconnect/
 
 ## Mac specific files
 .DS_Store
+
+# PSet Data
+**/rawdata/
