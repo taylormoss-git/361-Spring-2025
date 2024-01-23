@@ -107,7 +107,7 @@ g = ggplot(iris,
             aes(x = Petal.Width, 
                 y = Petal.Length)) + 
   geom_point() + 
-  ggtitle("Brian Macdonald's animation")
+  ggtitle("Yukoh Shimizu's animation")
 g
 
 a = g + 
@@ -118,8 +118,7 @@ a = g +
 #a  ## check that the animation works
 
 ## save the animation
-# anim_save(a, 
-#           filename = 'img/test animation.gif')
+# anim_save(a, filename = 'img/test animation.gif')
 
 ```
 
@@ -152,6 +151,8 @@ Take a screenshot showing Github Desktop (or different software, or the command 
 
 If you have experience with Git/Github, and prefer to use different software or the command line, that's fine, but we may not be able to help if you have a problem.
 
+I prefer to use terminal console instead of github desktop.
+
 #### 9. Clone the repo <https://github.com/bmacGTPM/361-Spring-2024> and create PR as follows.
 
 Clone the repo, create a new branch and name the branch `Firstname Lastname` your first and last name. Make an edit to the R Markdown file `pset00-GitHub-pull-request-Firstname-Lastname.Rmd` to have your name at the top instead of mine. Commit that to your branch, push those commits to GitHub, and create a pull-request to the `main` branch on the 361-Spring-2024 repo. Make the title of the pull request your first and last name. Do not attempt to approve the pull request, just create it. 
@@ -168,6 +169,4 @@ See https://bmacgtpm.github.io/notes/github-copilot-in-rstudio.html.
 
 If you use Github Copilot elsewhere, take a screenshot of whatever software you use.
 
-It might take a few days to get final approval.  Once you submit the information they ask for, they will say you will receive final approval shortly.  This may take a couple of days.  For the problem set, submit a screenshot of the page that says you need to wait for final approval, or a screenshot of the farthest you are able to get in the process of getting approval. If you don't receive final approval before the assignment due date, not to worry.  It may take longer than usual to receive final approval since it is the beginning of the semester.  
-
-
+It might take a few days to get final approval.  Once you submit the information they ask for, they will say you will receive final approval shortly.  This may take a couple of days.  For the problem set, submit a screenshot of the page that says you need to wait for final approval, or a screenshot of the farthest you are able to get in the process of getting approval. If you don't receive final approval before the assignment due date, not to worry.  It may take longer than usual to receive final approval since it is the beginning of the semester.
