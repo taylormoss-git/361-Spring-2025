@@ -130,10 +130,6 @@ a = g +
 ## save the animation
  #anim_save(a, 
            #filename = 'img/test animation.gif')
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 ```
 
 There should be a static plot and an animated plot above. 
