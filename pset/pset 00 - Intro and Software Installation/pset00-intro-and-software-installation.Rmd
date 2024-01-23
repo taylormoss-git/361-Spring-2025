@@ -110,10 +110,10 @@ g = ggplot(iris,
   ggtitle("Edoardo Marchionni's animation")
 g
 
-a = g + 
-  transition_states(Species,
-                    transition_length = 2,
-                    state_length = 1)
+# a = g + 
+#   transition_states(Species,
+#                     transition_length = 2,
+#                     state_length = 1)
 
 # a  ## check that the animation works
 
@@ -148,7 +148,7 @@ See https://bmacgtpm.github.io/notes/software-installation.html.
 Take a screenshot showing Github Desktop (or different software, or the command line) and show it here. 
 
 
-![](img/snip of GitHub Desktop.png)
+![](img/command_line.png)
 
 If you have experience with Git/Github, and prefer to use different software or the command line, that's fine, but we may not be able to help if you have a problem.
 
@@ -163,6 +163,8 @@ If you find yourself getting many notification, you can go to https://github.com
 See https://bmacgtpm.github.io/notes/github-copilot-in-rstudio.html.  
 
 ![](img/snip of GitHub Copilot.png)
+
+I had troubles to set up Copilot, I wrote an email to Brian.
 
 If you use Github Copilot elsewhere, take a screenshot of whatever software you use.
 
