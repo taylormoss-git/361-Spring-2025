@@ -111,6 +111,7 @@ g = ggplot(iris,
   ggtitle("Amanda Cao's animation")
 g
 
+
 a = g + 
   transition_states(Species,
                     transition_length = 2,
@@ -124,6 +125,7 @@ a
 ## save the animation
 anim_save(a,
           filename = 'img/test animation.gif')
+#
 
 ```
 
@@ -131,7 +133,7 @@ There should be a static plot and an animated plot above.
 If the `anim_save` worked properly there should be a new `test.gif`
 in the `img` folder that has your name. Take a screen shot of your animated gif when the points are near the upper right and show the screenshot here: 
 
-![](img/Animation_test.png)
+![](img/Test animation.png)
 
 
 If all of that works, `gganimate` is good to go!  If that doesn't work, see the tips at https://bmacgtpm.github.io/notes/software-installation.html.
