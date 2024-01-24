@@ -26,7 +26,7 @@ library(knitr)
 
 After you submit the quiz, take a screenshot of the time stamp and Question 1. It should look something like this. 
 
-![](img/snip of Course Survey.png)
+![](../../../Desktop/Screenshot 2024-01-23 at 7.51.22 PM.png)
 
 Edit the above file name and path to show your screenshot and ensure that it appears when you knit your document. 
 
@@ -99,7 +99,7 @@ library(pubtheme)
 
 #### 5. Check `gganimate`
 
-See https://bmacgtpm.github.io/notes/software-installation.html. The code from that page is below, except a custom title has been added. Replace my name with yours, uncomment the animation code, run all of this code.
+See https://bmacgtpm.github.io/notes/software-installation.html. The code from that page is below, except a custom title has been added. Replace my name with yours, _uncomment__ the animation code, run all of this code.
 
 ```{r}
 # We'll start with a static plot
@@ -107,7 +107,7 @@ g = ggplot(iris,
             aes(x = Petal.Width, 
                 y = Petal.Length)) + 
   geom_point() + 
-  ggtitle("Brian Macdonald's animation")
+  ggtitle("Pranik Chainani's animation")
 g
 
 a = g + 
@@ -115,7 +115,7 @@ a = g +
                     transition_length = 2,
                     state_length = 1)
 
-#a  ## check that the animation works
+# a  ## check that the animation works
 
 ## save the animation
 # anim_save(a, 
@@ -127,12 +127,12 @@ There should be a static plot and an animated plot above.
 If the `anim_save` worked properly there should be a new `test.gif`
 in the `img` folder that has your name. Take a screen shot of your animated gif when the points are near the upper right and show the screenshot here: 
 
-![](img/snip of test animation.png)
+![](../../../Desktop/Screenshot 2024-01-23 at 7.56.08 PM.png)
 
 
 If all of that works, `gganimate` is good to go!  If that doesn't work, see the tips at https://bmacgtpm.github.io/notes/software-installation.html.
 
-Once you have created the animation, comment out the code that creates the animation (as I have done above). This document won't knit to PDF with the animation code in it. You can only knit to HTML. 
+Once you have created the animation, __comment__ out the code that creates the animation (as I have done above). This document won't knit to PDF with the animation code in it. You can only knit to HTML. 
 
 #### 6. Bookmarks
 
@@ -148,7 +148,7 @@ See https://bmacgtpm.github.io/notes/software-installation.html.
 Take a screenshot showing Github Desktop (or different software, or the command line) and show it here. 
 
 
-![](img/snip of GitHub Desktop.png)
+![](../../../Desktop/Screenshot 2024-01-23 at 7.59.27 PM.png)
 
 If you have experience with Git/Github, and prefer to use different software or the command line, that's fine, but we may not be able to help if you have a problem.
 
@@ -164,7 +164,7 @@ If you find yourself getting too many GitHub notifications, you can go to https:
 
 See https://bmacgtpm.github.io/notes/github-copilot-in-rstudio.html.  
 
-![](img/snip of GitHub Copilot.png)
+![](../../../Desktop/Screenshot 2024-01-23 at 8.07.16 PM.png)
 
 If you use Github Copilot elsewhere, take a screenshot of whatever software you use.
 
