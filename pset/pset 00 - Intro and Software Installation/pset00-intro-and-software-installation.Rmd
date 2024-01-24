@@ -160,9 +160,11 @@ If you find yourself getting many notification, you can go to https://github.com
 
 #### 10. Set up Github Copilot in RStudio
 
+I'm unable to activate copilot because I'm not affiliated with an organization yet on Github. I have submitted an application to Github to prove my academic status, so I think this issue should be resolved in the next few days.
+
 See https://bmacgtpm.github.io/notes/github-copilot-in-rstudio.html.  
 
-![](img/snip of GitHub Copilot.png)
+![](img/snip of lisas copilot.png)
 
 If you use Github Copilot elsewhere, take a screenshot of whatever software you use.
 
