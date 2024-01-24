@@ -94,7 +94,6 @@ library(maps) ## leave uncommented. For some reason GitHub Actions had a problem
 ## load tidyverse last!
 library(tidyverse)
 library(pubtheme)
-
 ```
 
 #### 5. Check `gganimate`
@@ -107,7 +106,7 @@ g = ggplot(iris,
             aes(x = Petal.Width, 
                 y = Petal.Length)) + 
   geom_point() + 
-  ggtitle("Brian Macdonald's animation")
+  ggtitle("Yuanhao You's animation")
 g
 
 a = g + 
@@ -115,11 +114,10 @@ a = g +
                     transition_length = 2,
                     state_length = 1)
 
-#a  ## check that the animation works
+a
 
-## save the animation
-# anim_save(a, 
-#           filename = 'img/test animation.gif')
+anim_save(a,
+          filename = 'img/test animation.gif')
 
 ```
 
