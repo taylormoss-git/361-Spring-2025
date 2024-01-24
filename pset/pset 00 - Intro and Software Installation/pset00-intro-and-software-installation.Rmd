@@ -115,11 +115,11 @@ a = g +
                     transition_length = 2,
                     state_length = 1)
 
-a  ## check that the animation works
+#a  ## check that the animation works
 
 ## save the animation
-anim_save(a, 
-          filename = 'img/test animation.gif')
+#anim_save(a, 
+          #filename = 'img/test.gif')
 
 ```
 
