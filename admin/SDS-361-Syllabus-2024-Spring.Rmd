@@ -25,7 +25,7 @@ knitr::opts_chunk$set(echo = TRUE)
     - ULA: TBD
     - Course Manager: TBD
 - Midterms: TBD
-- Final exam: TBD
+- Final exam: Wed May 8, 9am-12pm, Room TBD
 - Schedule: See shared spreadsheet
 
 ## Course Objectives
