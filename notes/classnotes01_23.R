@@ -1,5 +1,5 @@
 ## viz.ev.market.share.data.r
-# in class notes T Jan 23
+# in class notes T Jan 23 & Th Jan 25
 
 # copied from CNBC article: 
 # https://www.cnbc.com/2023/12/08/automakers-turn-to-hybrids-ev-transition.html
@@ -69,3 +69,33 @@ ggsave(filename = paste0("img/", gsub("%", " Perc", title), ".jpg"), ## must hav
        units  = 'in', ## do not change
        dpi    = 72)   ## do not change
 
+## F-150 dataset
+
+df2 = data.frame(date = c('2022-04-01',
+                         '2022-08-01',
+                         '2022-10-01',
+                         '2022-12-01',
+                         '2023-03-01',
+                         '2023-07-01'),
+                price = c(39974,
+                          46974,
+                          51974,
+                          55974,
+                          59974,
+                          49995))
+
+df2
+df2$date = as.Date(df2$date)
+
+g2 = ggplot(df2,
+            aes(x = date,
+                y = price,
+                label = dollar(price))) +
+  geom_line(linewidth = 1) + # show line
+  geom_point(size = 3) + # show points
+  geom_text(size = 5, hjust = -0.1) +
+  scale_x_date(limits = c(as.Date('2022-03-01'), 
+                          as.Date('2023-09-30'))) +
+  scale_y_continuous(labels = dollar) # you can put a function as the argument too 
+                                      # (apply function 'dollar' to the labels)
+g2

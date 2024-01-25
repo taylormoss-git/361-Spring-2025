@@ -29,7 +29,7 @@ The `.zip` file `rawdata/DOI-10-13012-b2idb-4607538_v1.zip` contains one `.csv` 
 
 ```{r}
 unzip(zipfile = 'rawdata/DOI-10-13012-b2idb-4607538_v1.zip', 
-      list = TRUE) ## this lists the filename, but does not unzip the file
+      list = TRUE) ## this lists the filenames, but does not unzip the file
 ```
 
 Before summarizing/visualizing this data, we'll want to join these data sets. We could certainly unzip the file manually. We can also do this in R using `unzip`. 
@@ -52,10 +52,10 @@ years = 2008:2020
 d = NULL
 
 for(s in sources){
-  cat(s, '') ## set up columns (gwd, sw, and gwa)
+  cat(s, '') ## set up columns (gwd, sw, and gwa) i.e. loop through the sources
   
   for(year in years){
-    cat(year, '') ## set up row headers for each year
+    cat(year, '') ## set up row headers for each year i.e. loop through years
   
     ## 
     filename = paste0('rawdata/', s, '_', year, '.csv')
@@ -99,7 +99,7 @@ head(d)
 
 #### 2. Summaries of data 
 
-Find the mean, the change from 2008 to 2020, and the percent change from 2008 to 2020, for each crop and each source (SWW, GWW, GWD). 
+Find the **annual** mean **water usage**, the change from 2008 to 2020, and the percent change from 2008 to 2020, for each crop and each source (SWW, GWW, GWD). 
 
 ```{r}
 
