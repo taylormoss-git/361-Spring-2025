@@ -52,12 +52,12 @@ years = 2008:2020
 d = NULL
 
 for(s in sources){
-  cat(s, '') ## show progress
+  cat(s, '') ## adds space to each source 
   
   for(year in years){
-    cat(year, '') ## show progress
+    cat(year, '') ## adds space when displaying each year
   
-    ## 
+    ## reads in data from CSV
     filename = paste0('rawdata/', s, '_', year, '.csv')
     df = read.csv(filename)
     head(df)
@@ -68,7 +68,8 @@ for(s in sources){
     ## data frame into a data frame with 5 columns: 
     ## GEOID, crop, source, year, and value (indicating km^3 of water)
     
-    
+    df |>
+      pivot_longer()
     
     
     
