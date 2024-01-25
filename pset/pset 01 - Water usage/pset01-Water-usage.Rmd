@@ -46,10 +46,10 @@ First, let's create a data set with all years/crops together in one data frame. 
 
 Note that `eval = F` at the start of the chunk will prevent this chunk from evaluating when you knit the document. You can temporarily remove it if you'd like, but you'll want to add it back before knitting the document so that knitting takes less time.
 
-```{r eval = F}
+```{r}
 sources = c('gwd', 'sw', 'gwa')
 years = 2008:2020
-d = NULL
+
 
 for(s in sources){
   cat(s, '') ## show progress
@@ -97,10 +97,14 @@ head(d)
 
 #### 2. Summaries of data 
 
-Find the mean, the change from 2008 to 2020, and the percent change from 2008 to 2020, for each crop and each source (SWW, GWW, GWD). 
+Find the **annual** mean **water usage**, the change from 2008 to 2020, and the percent change from 2008 to 2020, for each crop and each source (SWW, GWW, GWD). 
 
 ```{r}
+dd = d %>%
+  group_by(crop, source, year) %>%
+  summarize(mean = mean(value))
 
+dd
 ```
 
 ## 3. Convert Table 2 to a visualization
