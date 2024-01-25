@@ -77,3 +77,18 @@ ggplot(dg, aes(x = year, y = value, fill = name)) +
   theme_minimal() +
   theme(legend.position = "bottom")
 
+
+df = data.frame(date = c('2022-04-01', '2022-08-01', '2022-10-01', '2022-12-01', '2023-03-01', '2023-07-01'), price = c(39974, 46974, 51974, 55974, 59974, 49995))
+df$date = as.Date(df$date)
+df
+
+g = ggplot(df, aes(x = date, 
+                   y = price,
+                   label = price)) +
+  geom_line() +
+  geom_point() +
+  geom_text(hjust = -0.1)
+g
+
+
+
