@@ -97,10 +97,18 @@ head(d)
 
 #### 2. Summaries of data 
 
-Find the mean, the change from 2008 to 2020, and the percent change from 2008 to 2020, for each crop and each source (SWW, GWW, GWD). 
+Find the **annual** mean for **water usage**, the change from 2008 to 2020, and the percent change from 2008 to 2020, for each crop and each source (SWW, GWW, GWD). 
 
 ```{r}
+dd1 = d |>
+  group_by(crop, src, year) |>
+  summarize(value = sum(value))
+dd1
 
+dd2 = dd1 |>
+  group_by(crop, src) |>
+  summarize(mean = mean(value))
+dd2
 ```
 
 ## 3. Convert Table 2 to a visualization
