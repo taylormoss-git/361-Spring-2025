@@ -1,5 +1,6 @@
 ---
 title: 'S&DS 361 Homework 0: Software Prep'
+author: "Andrea Wang"
 date: "Due Tue Jan 23, 2024"
 output:
   pdf_document: default
