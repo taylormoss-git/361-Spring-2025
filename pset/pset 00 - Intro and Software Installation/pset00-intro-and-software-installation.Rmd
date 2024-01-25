@@ -113,10 +113,10 @@ g
 
 
 # a = g + 
-#  transition_states(Species,
-#                    transition_length = 2,
-#                    state_length = 1)
-
+#   transition_states(Species,
+#                     transition_length = 2,
+#                     state_length = 1)
+# 
 # a  
 
 
@@ -124,8 +124,8 @@ g
 
 ## save the animation
 # anim_save(a,
-#          filename = 'img/test animation.gif')
-#
+#           filename = 'img/test animation.gif')
+
 
 ```
 
