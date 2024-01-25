@@ -57,7 +57,7 @@ for(s in sources){
   for(year in years){
     cat(year, '') ## show progress
   
-    ## 
+    ## Reading in the file for the source and year
     filename = paste0('rawdata/', s, '_', year, '.csv')
     df = read.csv(filename)
     head(df)
@@ -67,14 +67,16 @@ for(s in sources){
     ## Use `pivot_longer`, `separate`, and/or other functions to transform this
     ## data frame into a data frame with 5 columns: 
     ## GEOID, crop, source, year, and value (indicating km^3 of water)
-    
+    df = df |>
+      pivot_longer(cols = colnames(df)[-1]) |>
+      separate(col = name, into = c('source', 'crop', 'year'))
     
     
     
     
     ## end of transforming data ############################
     
-    ## 
+    ## join the two dataframes
     d = rbind(d, df)
   }
   
@@ -105,15 +107,26 @@ dd1 = d |>
   summarize(value = sum(value))
 dd1
 
+# Finding mean water usage for each year and change and percent change from 2008 to 2020
 dd2 = dd1 |>
   group_by(crop, src) |>
-  summarize(mean = mean(value))
+  summarize(mean = mean(value),
+            change = value[year == 2020] - value[year == 2008], 
+            perc_change = change/value[year == 2008]*100)
 dd2
 ```
 
 ## 3. Convert Table 2 to a visualization
 
 Create a visual representation of the information in Table 2. Create a visualization (or visualizations) that contains mean, change, and percent change in water usage from each crop and source. 
+
+```{r}
+g = ggplot(dd2, aes(y = crop, 
+                    x = mean, 
+                    fill = src)) +
+  geom_col(position = position_dodge())
+```
+
 
 
 # Figure 4
