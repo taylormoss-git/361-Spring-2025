@@ -154,9 +154,11 @@ If you have experience with Git/Github, and prefer to use different software or 
 
 #### 9. Clone the repo <https://github.com/bmacGTPM/361-Spring-2024> and create PR as follows.
 
-Clone the repo, create a new branch and name the branch `Firstname Lastname` your first and last name. Make an edit to the R Markdown file `pset00-GitHub-pull-request-Firstname-Lastname.Rmd` to have your name at the top instead of mine. Commit that to your branch, push those commits to GitHub, and create a pull-request to the `main` branch on the 361-Spring-2024 repo. Make the title of the pull request your first and last name. For help getting started, see <https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/overview/getting-started-with-github-desktop>.
+Clone the repo, create a new branch and name the branch `Firstname Lastname` your first and last name. Make an edit to the R Markdown file `pset00-GitHub-pull-request-Firstname-Lastname.Rmd` to have your name at the top instead of mine. Commit that to your branch, push those commits to GitHub, and create a pull-request to the `main` branch on the 361-Spring-2024 repo. Make the title of the pull request your first and last name. Do not attempt to approve the pull request, just create it. 
 
-If you find yourself getting many notification, you can go to https://github.com/watching to choose what notifications you get. [This page](https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/managing-subscriptions-for-activity-on-github/managing-your-subscriptions) has some more info on notifications/subscriptions. 
+For help getting started, see <https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/overview/getting-started-with-github-desktop>.
+
+If you find yourself getting too many GitHub notifications, you can go to https://github.com/watching to choose what notifications you get. [This page](https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/managing-subscriptions-for-activity-on-github/managing-your-subscriptions) has some more info on notifications/subscriptions. 
 
 #### 10. Set up Github Copilot in RStudio
 
@@ -166,5 +168,6 @@ See https://bmacgtpm.github.io/notes/github-copilot-in-rstudio.html.
 
 If you use Github Copilot elsewhere, take a screenshot of whatever software you use.
 
+It might take a few days to get final approval.  Once you submit the information they ask for, they will say you will receive final approval shortly.  This may take a couple of days.  For the problem set, submit a screenshot of the page that says you need to wait for final approval, or a screenshot of the farthest you are able to get in the process of getting approval. If you don't receive final approval before the assignment due date, not to worry.  It may take longer than usual to receive final approval since it is the beginning of the semester.  
 
 

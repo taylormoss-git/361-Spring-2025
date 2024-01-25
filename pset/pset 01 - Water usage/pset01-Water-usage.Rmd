@@ -1,0 +1,155 @@
+---
+title: "Pset 1 - Water usage"
+author: "425/625"
+date: "Spring 2024"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(pubtheme)
+```
+
+## Introduction 
+
+Water scarcity is a major issue in many parts of the world. According to the [United Nations](https://www.un.org/en/climatechange/science/climate-issues/water), "About two billion people worldwide don't have access to safe drinking water today ([SDG Report 2022](https://unstats.un.org/sdgs/report/2022/Goal-06/?_gl=1*aquqlc*_ga*MTAzMzA2ODI0Mi4xNzA0NjYzNjY3*_ga_TK9BQL5X7Z*MTcwNDY2NzIyMS4yLjEuMTcwNDY2NzI1My4wLjAuMA..)), and roughly half of the world’s population is experiencing severe water scarcity for at least part of the year ([IPCC](https://www.ipcc.ch/report/ar6/wg2/downloads/outreach/IPCC_AR6_WGII_FactSheet_FoodAndWater.pdf)). These numbers are expected to increase, exacerbated by climate change and population growth ([WMO](https://public.wmo.int/en/media/press-release/protect-our-people-and-future-generations-water-and-climate-leaders-call-urgent))."
+
+
+In this problem set, we will investigate water usage estimates by crop in the United States. The `.csv` for this data set comes from [here](https://databank.illinois.edu/datasets/IDB-4607538) (by checking Select All and clicking Get Custom Zip) and the associated academic journal article is [here](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2022WR032804). See [this thread](https://twitter.com/MeganKonar/status/1618943789279875074?s=20&t=nrjRJQ2tuEO0GyTwCK-XVA) on X for a summary.  
+
+Read the academic article to familiarize yourself with the basics of the water usage data. You don't need to know how these water usage levels were estimated, so you can skip over those parts. We are going to focus on visualizing the water levels using the estimates that they generated. 
+
+## Data preparation
+
+The `.zip` file `rawdata/DOI-10-13012-b2idb-4607538_v1.zip` contains one `.csv` file per source (SWW, GWW, GWD) per year from 2008 to 2020. There are also a couple of `.txt` files in the folder. We can use `unzip` with `list = TRUE` to see what's in the `.zip` file. 
+
+```{r}
+unzip(zipfile = 'rawdata/DOI-10-13012-b2idb-4607538_v1.zip', 
+      list = TRUE) ## this lists the filename, but does not unzip the file
+```
+
+Before summarizing/visualizing this data, we'll want to join these data sets. We could certainly unzip the file manually. We can also do this in R using `unzip`. 
+
+```{r eval=F}
+unzip(zipfile = 'rawdata/DOI-10-13012-b2idb-4607538_v1.zip', 
+      junkpaths = TRUE, 
+      exdir = 'rawdata') ## gets rid of paths, keeps only filenames 
+```
+
+
+#### 1. Join data
+First, let's create a data set with all years/crops together in one data frame. Below is some code to help you get started. Add comments to each place there is `##` to explain what the chunk of code is doing. Then add code to the `Tranforming data` Section to transform the data into a data frame with 5 columns: `GEOID`, `crop`, `source`, `year`, and `value` (indicating km^3 of water).
+
+Note that `eval = F` at the start of the chunk will prevent this chunk from evaluating when you knit the document. You can temporarily remove it if you'd like, but you'll want to add it back before knitting the document so that knitting takes less time.
+
+```{r eval = F}
+sources = c('gwd', 'sw', 'gwa')
+years = 2008:2020
+d = NULL
+
+for(s in sources){
+  cat(s, '') ## show progress
+  
+  for(year in years){
+    cat(year, '') ## show progress
+  
+    ## 
+    filename = paste0('rawdata/', s, '_', year, '.csv')
+    df = read.csv(filename)
+    head(df)
+    
+    
+    ## Tranform data #######################################
+    ## Use `pivot_longer`, `separate`, and/or other functions to transform this
+    ## data frame into a data frame with 5 columns: 
+    ## GEOID, crop, source, year, and value (indicating km^3 of water)
+    
+    
+    
+    
+    
+    ## end of transforming data ############################
+    
+    ## 
+    d = rbind(d, df)
+  }
+  
+  cat('\n') ## start a new line before showing progress for the next source
+}
+head(d)
+tail(d)
+```
+
+
+## Data exploration and summaries
+
+Let's load the data we'll use for the rest of the assignment. This is the data set created in #1, so if you were unable to finish #1, you can still do the rest of the assignment. 
+
+```{r}
+d = readRDS('data/water.usage.rds')
+head(d)
+```
+
+
+#### 2. Summaries of data 
+
+Find the mean, the change from 2008 to 2020, and the percent change from 2008 to 2020, for each crop and each source (SWW, GWW, GWD). 
+
+```{r}
+
+```
+
+## 3. Convert Table 2 to a visualization
+
+Create a visual representation of the information in Table 2. Create a visualization (or visualizations) that contains mean, change, and percent change in water usage from each crop and source. 
+
+
+# Figure 4
+
+Figure 4 shows the average water usage by crop and source.
+
+- A. average irrigation water usage by source, colored by crop, 
+- B. average irrigation water usage by crop, colored by source 
+
+Two other options for visualizing a numeric variable broken down by two different categorical variable would be a tile plot/grid plot (e.g. https://github.com/bmacGTPM/pubtheme?tab=readme-ov-file#grid-plot) and a mosiac plot (https://haleyjeppson.github.io/ggmosaic/).
+
+
+## 4. Create a tile plot/grid plot of the data in Figure 4. 
+
+```{r}
+
+```
+
+## 5. Create a mosiac plot of the data in Figure 4. 
+
+```{r}
+
+```
+
+## 6. What are the benefits (other than it fits on one plot) and drawbacks of these two plots?
+
+
+## 7. Figure 6 
+
+Figure 6 uses a different color scale for each plot. Discuss the benefits and drawbacks of this choice. What was the main purposes of this figure? Given the main purpose, would you recommend using the same color scale, or different color scales, for each plot?
+
+
+
+## 8. Figure 8 
+
+Figure 8 also uses a different color scale for each plot.  Discuss the benefits and drawbacks of this choice. What was the main purposes of this figure? Given the main purpose, would you recommend using the same color scale, or different color scales, for each plot?
+
+
+
+
+## 9. Breakdown of GWW
+The paper notes in Section 3.1 that $GWW = GWW_{sustainable} + GWW_{unsustainable}$, and that $GWD = GWW_{unsustainable}$. Create a visualization showing the percent of GWW that is GWD for each crop. Use the mean values for water usage. 
+
+
+
+## 10. Custom visualization
+What is another question you have about this data? Create a visualization that attempt to answer your question. 
