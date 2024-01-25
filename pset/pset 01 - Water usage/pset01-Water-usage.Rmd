@@ -57,29 +57,28 @@ for(s in sources){
   for(year in years){
     cat(year, '') ## show progress
   
-    ## 
+    ## load raw data file named s_year.csv
     filename = paste0('rawdata/', s, '_', year, '.csv')
     df = read.csv(filename)
     head(df)
-    
     
     ## Tranform data #######################################
     ## Use `pivot_longer`, `separate`, and/or other functions to transform this
     ## data frame into a data frame with 5 columns: 
     ## GEOID, crop, source, year, and value (indicating km^3 of water)
-    
-    
-    
-    
-    
+    df <- df %>% pivot_longer(cols = !GEOID, 
+                              names_to = c("src", "crop", "year"),
+                              names_sep = "[.]",
+                              values_to = "value")
     ## end of transforming data ############################
     
-    ## 
+    ## concatenate transformed data
     d = rbind(d, df)
   }
-  
+
   cat('\n') ## start a new line before showing progress for the next source
 }
+d <- d[, c("GEOID", "crop", "src", "year", "value")]  
 head(d)
 tail(d)
 ```
@@ -100,12 +99,21 @@ head(d)
 Find the mean, the change from 2008 to 2020, and the percent change from 2008 to 2020, for each crop and each source (SWW, GWW, GWD). 
 
 ```{r}
-
+d %>%
+  group_by(crop, src, year) %>%
+  summarise(mean = mean(value), total = sum(value)) %>%
+  mutate(change = c(0, diff(total))) %>%
+  mutate(pct_change = change * 100)
 ```
 
 ## 3. Convert Table 2 to a visualization
 
 Create a visual representation of the information in Table 2. Create a visualization (or visualizations) that contains mean, change, and percent change in water usage from each crop and source. 
+
+```{r}
+
+```
+
 
 
 # Figure 4
@@ -124,7 +132,7 @@ Two other options for visualizing a numeric variable broken down by two differen
 
 ```
 
-## 5. Create a mosiac plot of the data in Figure 4. 
+## 5. Create a mosaic plot of the data in Figure 4. 
 
 ```{r}
 
