@@ -68,7 +68,7 @@ for(s in sources){
     ## data frame into a data frame with 5 columns: 
     ## GEOID, crop, source, year, and value (indicating km^3 of water)
     df = df |>
-      pivot_longer(cols = colnames(df)[-1]) |>
+      pivot_longer(cols = -GEOID) |>
       separate(col = name, into = c('source', 'crop', 'year'))
     
     
@@ -121,10 +121,20 @@ dd2
 Create a visual representation of the information in Table 2. Create a visualization (or visualizations) that contains mean, change, and percent change in water usage from each crop and source. 
 
 ```{r}
-g = ggplot(dd2, aes(y = crop, 
-                    x = mean, 
+## Make ggplot of data
+g = ggplot(dd2, aes(x = reorder(crop, mean, sum), 
+                    y = mean, 
                     fill = src)) +
-  geom_col(position = position_dodge())
+  geom_col() +
+  labs(x = "Crop", 
+       y = expression(paste("Mean Water Usage ", (km^3))), 
+       title = "Mean Water Usage From 2008 to 2020",
+       fill = "Source:") +
+  theme(axis.text.x = element_text(angle = 45, vjust = 0.95, hjust = 1),
+        legend.position = 'top',
+        legend.justification = 'left')
+
+g
 ```
 
 
