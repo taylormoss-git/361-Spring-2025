@@ -33,10 +33,13 @@ title = "EV, HEV, and Other Vehicle Market Share"
 g = ggplot(dg %>% filter(name != 'other'), ## equiv. to dg[dg$name != 'other']
            aes(x = value, 
                y = year, 
-               label = round(value,2),
+               label = round(value, 1),
                fill = name)) +
-  geom_col(width = 0.8) + 
-  # geom_text(hjust = -0.1) + ## optional numbers with reasonable number of digits
+  geom_col(width = 0.8, 
+           position = position_dodge(width = 0.8)) + 
+  geom_text(vjust = -0.2,
+            position = position_dodge(width = 0.8),
+            size = 4) + ## must specify default width
   labs(title    = title,
        x        = 'Market Share',
        y        = 'Year') +
@@ -47,7 +50,11 @@ g
 # or
 g %>%
   pub(type = 'bar')
-g
+
+# flip the coords; and need to change hjust to vjust in geom_text()
+# can also just flip x and y in the arguments of aes()
+g +
+  coord_flip()
 
 ------------------
 ## Save to a file using base_size = 36
