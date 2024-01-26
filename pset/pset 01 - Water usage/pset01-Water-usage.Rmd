@@ -152,13 +152,41 @@ Two other options for visualizing a numeric variable broken down by two differen
 ## 4. Create a tile plot/grid plot of the data in Figure 4. 
 
 ```{r}
+title = "Mean Yearly Water Usage from 2008 to 2020 by Crop and Source"
+g = ggplot(dd2, 
+           aes(x    = crop, 
+               y    = src, 
+               fill = mean)) + 
+  geom_tile(linewidth   = 0.4, 
+            show.legend = T, 
+            color       = pubdarkgray) +
+  scale_fill_gradient(low  = pubgradgray,
+                      high = pubblue) +
+  labs(title = title,
+       x     = 'Crop', 
+       y     = 'Source',
+       fill  = expression(paste("Mean Water Usage ", (km^3/year))))
 
+g %>% 
+  pub(type    = 'grid') +
+  theme(axis.text.x = element_text(angle = 45, hjust = 0))
 ```
 
 ## 5. Create a mosiac plot of the data in Figure 4. 
 
 ```{r}
-
+library(ggmosaic)
+title = "Mean Yearly Water Usage from 2008 to 2020 by Crop and Source"
+g = ggplot(dd2) +
+  geom_mosaic(aes(x = crop,
+                  fill = src, weight = mean)) +
+  theme_mosaic() +
+  labs(title = title,
+       x = 'Crop', 
+       fill = 'Source',
+       weight = expression(paste("Mean Water Usage ", (km^3/year)))) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+g
 ```
 
 ## 6. What are the benefits (other than it fits on one plot) and drawbacks of these two plots?
