@@ -56,10 +56,8 @@ g = ggplot(dg %>% filter(name != 'other'), ## same as dg[dg$name != 'other',]
                y = year, 
                label = round(value,1), 
                fill = name)) +
-  geom_col(width = 0.5, 
-           position = position_dodge(width=0.8)) + 
-  geom_text(hjust = -0.1,
-            position = position_dodge(width = 0.8)) + ## optional numbers with reasonable number of digits
+  geom_col(width = 0.8, ) + 
+  #geom_text(hjust = -0.1) + ## optional numbers with reasonable number of digits
   labs(title    = title,
        x        = 'Market Share', ## Optional. 
        y        = 'Year')  ## Optional. Upper Lower.
@@ -67,6 +65,44 @@ g
 
 g %>%
   pub(type = 'bar')
+
+
+title = "EV, HEV, and Other Vehicle Market Share" 
+g = ggplot(dg %>% filter(name != 'other'), ## same as dg[dg$name != 'other',]
+           aes(x = value, 
+               y = year, 
+               label = round(value,1), 
+               fill = name)) +
+  geom_col(width = 0.8, 
+           position = position_dodge(width = 0.8)) + 
+  geom_text(hjust = -0.1, 
+            position = position_dodge(width = 0.8)) + 
+  labs(title    = title,
+       x        = 'Market Share', ## Optional. 
+       y        = 'Year') + ## Optional. Upper Lower.
+  theme(legend.position = 'top')
+g
+
+g %>%
+  pub(type = 'bar')
+
+## flip the coords
+## need to change hjust to vjust
+g = ggplot(dg %>% filter(name != 'other'), ## same as dg[dg$name != 'other',]
+               aes(y = value, 
+                   x = year, 
+                   label = round(value,1), 
+                   fill = name)) +
+  geom_col(width = 0.8, 
+           position = position_dodge(width = 0.8)) + 
+  geom_text(vjust = -0.1,
+            position = position_dodge(width = 0.8)) + 
+  labs(title    = title,
+       y        = 'Market Share', ## Optional. 
+       x        = 'Year')  ## Optional. Upper Lower.
+
+g 
+
 
 
 ## What chatGPT suggested
@@ -79,52 +115,53 @@ ggplot(dg, aes(x = year, y = value, fill = name)) +
   theme_minimal() +
   theme(legend.position = "bottom")
 
+## F-150 
 
-## F-150 example
-
-df = data.frame(date = c('2022-04-01',
-                         '2022-08-01',
+df = data.frame(date = c('2022-04-01', 
+                         '2022-08-01', 
                          '2022-10-01',
-                         '2022-12-01',
-                         '2023-03-01',
-                         '2023-07-01'),
-                price = c(39974,
-                          46974,
-                          51974,
-                          55974,
+                         '2022-12-01', 
+                         '2023-03-01', 
+                         '2023-07-01'), 
+                price = c(39974, 
+                          46974, 
+                          51974, 
+                          55974, 
                           59974,
                           49995))
+
 df
 
 g = ggplot(df, 
-           aes(x = date, y = price)) +
-  geom_line() +
+           aes(x = date, 
+               y = price)) + 
+  geom_line() + 
   geom_point()
-
 g
 
-#need to convert date to date
+## need to convert date to date
 df$date = as.Date(df$date)
 
 g = ggplot(df, 
-           aes(x = date, y = price)) +
-  geom_line() +
+           aes(x = date, 
+               y = price)) + 
+  geom_line() + 
   geom_point()
-
 g
 
 ## add text labels to the points
-g = ggplot(df, 
-           aes(x = date, 
-               y = price,
-               label = dollar(price))) +
-  geom_line() +
-  geom_point() +
-  geom_text(hjust = -0.1)+
-  scale_x_date(limits = c(as.Date('2022-03-01'), as.Date('2023-08-30'))) +
+g = ggplot(df, aes(x = date, 
+                   y = price, 
+                   label = dollar(price))) + 
+  geom_line() + 
+  geom_point() + 
+  geom_text(hjust = -0.1) + 
+  scale_x_date(limits = c(as.Date('2022-03-01'), 
+                          as.Date('2023-08-30'))) + 
   scale_y_continuous(labels = dollar)
-
 g
 
-g %>%
-  pub(type = 'line')
+df$price 
+dollar(df$price)
+df$label = dollar(df$price)
+df
