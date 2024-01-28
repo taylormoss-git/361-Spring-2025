@@ -68,15 +68,18 @@ for(s in sources){
     ## data frame into a data frame with 5 columns: 
     ## GEOID, crop, source, year, and value (indicating km^3 of water)
     
-    df |>
-      pivot_longer()
+    df2 <- df |>
+      pivot_longer(cols = -GEOID,
+                   names_to = 'name',
+                   values_to = 'value') |>
+      separate(col = name, into = c('source', 'crop', 'year'), sep = '\\.')
     
     
     
     ## end of transforming data ############################
     
-    ## 
-    d = rbind(d, df)
+    ## combines the dataframe we just created (df2) with the dataframe of values which we set as null earlier (d)
+    d = rbind(d, df2)
   }
   
   cat('\n') ## start a new line before showing progress for the next source
@@ -102,6 +105,22 @@ Find the mean, the change from 2008 to 2020, and the percent change from 2008 to
 
 ```{r}
 
+df3 <- d |>
+  group_by(crop, src, year) |> # can group by multiple columns in a dataframe, this creates a unique group for every combination of crop and source
+  summarise(sum = sum(value)) # this calculates the sum of the values for each group
+
+mean <- df3 |>
+  group_by(crop, src) |>
+  summarise(mean = mean(sum)) # this calculates the mean of each group
+
+mean_change <- df3 |>
+  group_by(crop, src) |>
+  summarise(mean_change = mean(sum[year == 2020]) - mean(sum[year == 2008])) # boolean masking, allows us to choose specific years to find the mean change between
+
+percent_change <- df3 |>
+  group_by(crop, src) |>
+  summarise(percent_change = ((mean(sum[year == 2020]) - mean(sum[year == 2008])) / mean(sum[year == 2008])) * 100) # same as above, but with percent change
+
 ```
 
 ## 3. Convert Table 2 to a visualization
@@ -122,6 +141,24 @@ Two other options for visualizing a numeric variable broken down by two differen
 ## 4. Create a tile plot/grid plot of the data in Figure 4. 
 
 ```{r}
+# creating a big data frame that has all the same columns as Figure 4
+df4 <- cbind(mean, mean_change$mean_change, percent_change$percent_change)
+df4 <- df4 |>
+  rename(mean_change = ...4,
+         percent_change = ...5)
+
+df_grid <- df4 |>
+  mutate(Source = factor(src),
+         Crop = factor(crop))
+
+df_grid <- df_grid |>
+  complete(Source, Crop, fill = list(value = NA))
+
+title = "Grid Plot of Crop-Source Combo"
+g <- ggplot(df_grid,
+            aes(x = Source,
+                y = Crop,
+                fill = value))
 
 ```
 
