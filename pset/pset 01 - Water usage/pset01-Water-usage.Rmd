@@ -72,8 +72,6 @@ for(s in sources){
       separate(col = name, into = c('source', 'crop', 'year'))
     
     
-    
-    
     ## end of transforming data ############################
     
     ## join the two dataframes
@@ -121,18 +119,97 @@ dd2
 Create a visual representation of the information in Table 2. Create a visualization (or visualizations) that contains mean, change, and percent change in water usage from each crop and source. 
 
 ```{r}
-## Make ggplot of data
+## Change Crop Names to common names
+dd2$crop = recode(dd2$crop,
+                  "barley" = "Barley",
+                  "corn" = "Corn",
+                  "cotton" = "Cotton",
+                  "rice" = "Rice",
+                  "sorghum" = "Sorghum",
+                  "soybeans" = "Soybeans",
+                  "wheat" = "Wheat",
+                  "sweetpotatoes" = "Sweet Potatoes",
+                  "rapeseed" = "Rapeseed",
+                  "millet" = "Millet",
+                  "sunflower" = "Sunflower",
+                  "rye" = "Rye",
+                  "peanuts" = "Peanuts",
+                  "sugarbeets" = "Sugar Beets",
+                  "pulses" = "Pulses",
+                  "oats" = "Oats",
+                  "potatoes" = "Potatoes",
+                  "other_sctg2" = "Other Grains",
+                  "other_sctg3" = "Other Produce",
+                  "other_sctg4" = "Other Animal Feed")
+
+## Make ggplot of mean usage data
+title = "Mean Yearly Water Usage from 2008 to 2020"
 g = ggplot(dd2, aes(x = reorder(crop, mean, sum), 
                     y = mean, 
                     fill = src)) +
-  geom_col() +
+  geom_col(position = position_dodge()) +
   labs(x = "Crop", 
-       y = expression(paste("Mean Water Usage ", (km^3))), 
-       title = "Mean Water Usage From 2008 to 2020",
+       y = expression(paste("Mean Water Usage ", (km^3 / year))), 
+       title = title,
        fill = "Source:") +
-  theme(axis.text.x = element_text(angle = 45, vjust = 0.95, hjust = 1),
-        legend.position = 'top',
-        legend.justification = 'left')
+  theme_pub() +
+  theme(axis.text.x = element_text(angle = 45, 
+                                   vjust = 1, 
+                                   hjust = 1, 
+                                   size = 10),
+        axis.text.y = element_text(size = 10)) +
+  scale_fill_discrete(labels = c("Ground Withdrawals",
+                                 "Ground Depletions",
+                                 "Surface Withdrawals"))
+
+g
+
+
+## Make ggplot of change data
+title = "Change in Yearly Water Usage from 2008 to 2020"
+g = ggplot(dd2, aes(x = reorder(crop, change, sum), 
+                    y = change, 
+                    fill = src)) +
+  geom_col(position = position_dodge()) +
+  labs(x = "Crop", 
+       y = expression(paste("Change in Water Usage ", (km^3))), 
+       title = title,
+       fill = "Source:") +
+  theme_pub() +
+  theme(axis.text.x = element_text(angle = 45, 
+                                   vjust = 1, 
+                                   hjust = 1, 
+                                   size = 10),
+        axis.text.y = element_text(size = 10)) +
+  scale_fill_discrete(labels = c("Ground Withdrawals",
+                                 "Ground Depletions",
+                                 "Surface Withdrawals"))
+
+g
+
+
+
+## Make ggplot of percent change data
+title = "Percent Change in Yearly Water Usage from 2008 to 2020"
+g = ggplot(dd2, aes(x = reorder(crop, perc_change, sum), 
+                    y = perc_change, 
+                    fill = src)) +
+  geom_col(position = position_dodge()) +
+  labs(x = "Crop", 
+       y = "Percent Change in Water Usage", 
+       title = title,
+       fill = "Source:") +
+  theme_pub() +
+  theme(axis.text.x = element_text(angle = 45, 
+                                   vjust = 1, 
+                                   hjust = 1, 
+                                   size = 10),
+        axis.text.y = element_text(size = 10)) +
+  scale_fill_discrete(labels = c("Ground Withdrawals",
+                                 "Ground Depletions",
+                                 "Surface Withdrawals")) + 
+  scale_y_continuous(labels = function(x) paste0(x, "%")) # Add percent sign 
+
 
 g
 ```
@@ -152,9 +229,9 @@ Two other options for visualizing a numeric variable broken down by two differen
 ## 4. Create a tile plot/grid plot of the data in Figure 4. 
 
 ```{r}
-title = "Mean Yearly Water Usage from 2008 to 2020 by Crop and Source"
+title = "Mean Yearly Water Usage from 2008 to 2020"
 g = ggplot(dd2, 
-           aes(x    = crop, 
+           aes(x    = reorder(crop, mean, sum), 
                y    = src, 
                fill = mean)) + 
   geom_tile(linewidth   = 0.4, 
@@ -169,17 +246,18 @@ g = ggplot(dd2,
 
 g %>% 
   pub(type    = 'grid') +
-  theme(axis.text.x = element_text(angle = 45, hjust = 0))
+  theme(axis.text.x = element_text(angle = 90, hjust = 0))
 ```
 
 ## 5. Create a mosiac plot of the data in Figure 4. 
 
 ```{r}
 library(ggmosaic)
-title = "Mean Yearly Water Usage from 2008 to 2020 by Crop and Source"
+title = "Mean Yearly Water Usage from 2008 to 2020"
 g = ggplot(dd2) +
   geom_mosaic(aes(x = crop,
-                  fill = src, weight = mean)) +
+                  fill = src, 
+                  weight = mean)) +
   theme_mosaic() +
   labs(title = title,
        x = 'Crop', 
