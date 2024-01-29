@@ -158,7 +158,8 @@ title = "Grid Plot of Crop-Source Combo"
 g <- ggplot(df_grid,
             aes(x = Source,
                 y = Crop,
-                fill = value))
+                fill = ))
+g
 
 ```
 
