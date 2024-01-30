@@ -102,7 +102,17 @@ head(d)
 Find the **annual** mean **water usage**, the change from 2008 to 2020, and the percent change from 2008 to 2020, for each crop and each source (SWW, GWW, GWD). 
 
 ```{r}
+# overall national totals summed across GeoID's (locations), for each crop, source, and year
+dd1 = d %>%
+  group_by(crop, src, year) %>%
+  summarize(value = sum(value))
+dd1
 
+# mean across years (annual mean)
+dd2 = dd1 %>%
+  group_by(crop, src) %>%
+  summarize(mean = mean(value))
+dd2
 ```
 
 ## 3. Convert Table 2 to a visualization
