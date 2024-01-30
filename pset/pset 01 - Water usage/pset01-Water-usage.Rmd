@@ -99,11 +99,25 @@ head(d)
 Find the mean, the change from 2008 to 2020, and the percent change from 2008 to 2020, for each crop and each source (SWW, GWW, GWD). 
 
 ```{r}
-d %>%
+## calculate mean for each crop and source
+d_mean <- d %>%
+  group_by(crop, src) %>%
+  summarise(mean = mean(value))
+# head(d_mean)
+
+## calculate change and % change for each crop and source
+d_chg <- d %>%
+  filter(year == "2008" | year == "2020") %>%
   group_by(crop, src, year) %>%
-  summarise(mean = mean(value), total = sum(value)) %>%
+  summarise(total = sum(value)) %>%
   mutate(change = c(0, diff(total))) %>%
-  mutate(pct_change = change * 100)
+  mutate(pct_change = change/lag(total) * 100) %>%
+  filter(year == "2020") %>%
+  select(crop, src, change, pct_change)
+# head(d_chg)
+
+d_summ <- full_join(d_mean, d_chg, by = c("crop" = "crop", "src" = "src"))
+head(d_summ)
 ```
 
 ## 3. Convert Table 2 to a visualization
@@ -111,6 +125,34 @@ d %>%
 Create a visual representation of the information in Table 2. Create a visualization (or visualizations) that contains mean, change, and percent change in water usage from each crop and source. 
 
 ```{r}
+library(ggplot2)
+
+## plot mean 
+ggplot(d_summ) + 
+  geom_bar(aes(fill = src, x = crop, y = mean), stat = "identity",
+           position = "dodge") +
+  theme(axis.text.x = element_text(angle = 45, hjust=1)) + 
+  labs(title = "Average Water Usage",
+       x = "Crop", y = "Average (km^3)") + 
+  scale_fill_discrete(name = "Water Source")
+
+## plot change
+ggplot(d_summ) + 
+  geom_bar(aes(fill = src, x = crop, y = change), stat = "identity",
+           position = "dodge") +
+  theme(axis.text.x = element_text(angle = 45, hjust=1)) + 
+  labs(title = "Change in Water Usage from 2008 to 2020",
+       x = "Crop", y = "Change (km^3)") + 
+  scale_fill_discrete(name = "Water Source")
+
+## plot percent change
+ggplot(d_summ) + 
+  geom_bar(aes(fill = src, x = crop, y = pct_change), stat = "identity",
+           position = "dodge") +
+  theme(axis.text.x = element_text(angle = 45, hjust=1)) + 
+  labs(title = "Percent Change in Water Usage from 2008 to 2020",
+       x = "Crop", y = "Percent") + 
+  scale_fill_discrete(name = "Water Source")
 
 ```
 
@@ -123,7 +165,7 @@ Figure 4 shows the average water usage by crop and source.
 - A. average irrigation water usage by source, colored by crop, 
 - B. average irrigation water usage by crop, colored by source 
 
-Two other options for visualizing a numeric variable broken down by two different categorical variable would be a tile plot/grid plot (e.g. https://github.com/bmacGTPM/pubtheme?tab=readme-ov-file#grid-plot) and a mosiac plot (https://haleyjeppson.github.io/ggmosaic/).
+Two other options for visualizing a numeric variable broken down by two different categorical variable would be a tile plot/grid plot (e.g. https://github.com/bmacGTPM/pubtheme?tab=readme-ov-file#grid-plot) and a mosaic plot (https://haleyjeppson.github.io/ggmosaic/).
 
 
 ## 4. Create a tile plot/grid plot of the data in Figure 4. 
@@ -141,16 +183,23 @@ Two other options for visualizing a numeric variable broken down by two differen
 ## 6. What are the benefits (other than it fits on one plot) and drawbacks of these two plots?
 
 
+
 ## 7. Figure 6 
 
 Figure 6 uses a different color scale for each plot. Discuss the benefits and drawbacks of this choice. What was the main purposes of this figure? Given the main purpose, would you recommend using the same color scale, or different color scales, for each plot?
 
+```{r}
+
+```
 
 
 ## 8. Figure 8 
 
 Figure 8 also uses a different color scale for each plot.  Discuss the benefits and drawbacks of this choice. What was the main purposes of this figure? Given the main purpose, would you recommend using the same color scale, or different color scales, for each plot?
 
+```{r}
+
+```
 
 
 
