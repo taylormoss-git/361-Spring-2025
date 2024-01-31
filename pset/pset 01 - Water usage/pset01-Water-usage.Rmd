@@ -106,8 +106,11 @@ Find the mean, the change from 2008 to 2020, and the percent change from 2008 to
 ## 3. Convert Table 2 to a visualization
 
 Create a visual representation of the information in Table 2. Create a visualization (or visualizations) that contains mean, change, and percent change in water usage from each crop and source. 
-
-
+Pivot longer
+Title
+labeled axes
+text?
+Visualization best practices
 # Figure 4
 
 Figure 4 shows the average water usage by crop and source.
