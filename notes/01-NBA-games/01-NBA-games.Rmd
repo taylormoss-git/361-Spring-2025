@@ -95,12 +95,14 @@ We won't use the `gkey` column much for now. It is there to distinguish games fr
 Each row in the data frame contains game summary data for one game from one of several leagues (NBA, NHL, NFL, MLB, CFB, and MCBB) 
 
 ```{r}
-
+table(d$lg)
 ```
 
 over many seasons
 
 ```{r}
+table(d$season, d$lg)
+table(d$season.type, d$lg)
 
 ```
 
@@ -125,7 +127,8 @@ head(d)
 Often we'll take a peak at data frames by using `head` or `tail`, or by printing the entire data frame. Sometimes it can be useful to display a data frame as a interactive table that we can play around with. We can do this using `datatable` from the `DT` package. With its default usage, we can sort by any column and search for any term.
 
 ```{r}
-
+library(DT)
+datatable(d)
 ```
 ## Recommended options with `DT`
 
@@ -172,6 +175,9 @@ More examples and options can be found here https://rstudio.github.io/DT or here
 Let's see if we can detect any sort of home advantage. It will be more appropriate to do this in the context of regression later but for now the easiest way to do this is to find the average margin of victory by the home team. 
 
 ```{r}
+d %>% 
+  mutate(diff = hscore - ascore) %>% 
+  summarise(home_advantage = mean(diff))
 
   
 ```
@@ -182,7 +188,15 @@ Let's see if we can detect any sort of home advantage. It will be more appropria
 We might think that home advantage varies by team, if certain venues are particularly difficult to play in. Let's see how much variation there is in home advantage. It will be more appropriate to do this in the context of regression later but for now we can look at score differential when a team is the home team, score differential when a team is the away team, and the difference between those. 
 
 ```{r}
+dh = d %>% 
+  mutate(diff = hscore - ascore) %>% 
+  group_by(home) %>% 
+  summarise(home_advantage = mean(diff)) %>% 
+  arrange(desc(home_advantage)) %>% 
+  head(10)
+```
 
+```{r}
 ```
 There is some evidences of variation in home advantage among teams. We'll do more testing of this later.
 
