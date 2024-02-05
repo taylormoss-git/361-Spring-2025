@@ -212,13 +212,12 @@ ggplot(data = dd) +
 
 
 ## 6. What are the benefits (other than it fits on one plot) and drawbacks of these two plots?
-T
-
+Mosaic plots excel in showing proportional relationships and comparisons between categorical data, but they can oversimplify continuous data like average water usage, leading to potential interpretative challenges, especially in crowded plots. Tile plots are more suited for visualizing continuous data, using color gradients to intuitively convey variations in values like water usage across categories. However, tile plots can sometimes lose finer details and depend heavily on color perception, which might be challenging for color vision-deficient viewers. In the context of irrigation water use by crop and source, a tile plot is more appropriate due to its effectiveness in displaying continuous variables.
 ## 7. Figure 6 
 
 Figure 6 uses a different color scale for each plot. Discuss the benefits and drawbacks of this choice. What was the main purposes of this figure? Given the main purpose, would you recommend using the same color scale, or different color scales, for each plot?
 
-Mosaic plots excel in showing proportional relationships and comparisons between categorical data, but they can oversimplify continuous data like average water usage, leading to potential interpretative challenges, especially in crowded plots. Tile plots are more suited for visualizing continuous data, using color gradients to intuitively convey variations in values like water usage across categories. However, tile plots can sometimes lose finer details and depend heavily on color perception, which might be challenging for color vision-deficient viewers. In the context of irrigation water use by crop and source, a tile plot is more appropriate due to its effectiveness in displaying continuous variables.
+Figure 6 uses different color scales in a misleading way particularly given how the scales vary across crop as well as across source. It fails to provide clear comparisons. I would use a different colored scale for each plot that has a different scale. This would allow for a more accurate comparison of the data.
 
 ## 8. Figure 8 
 
